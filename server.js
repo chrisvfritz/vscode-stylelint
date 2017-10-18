@@ -31,6 +31,8 @@ function validate(document) {
 
   if (supportedCustomSyntaxes.has(document.languageId)) {
     options.syntax = document.languageId;
+  } else {
+    options.syntax = 'scss';
   }
 
   return stylelintVSCode(options).then(diagnostics => {
